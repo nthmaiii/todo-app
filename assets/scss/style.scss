@@ -1,0 +1,247 @@
+h1 {
+    margin: 0;
+}
+.todo-app {
+    width: 400px;
+    background-color: #ddd;
+    border-radius: 7px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 30px;
+    &__create {
+        display: flex;
+        margin-top: 20px;
+        & input {
+            padding: 10px;
+            border: none;
+            outline: none;
+            flex: 1;
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px;
+        }
+        & button {
+            background-color: #FDC200;
+            border: none;
+            width: 40px;
+            font-size: 20px;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            cursor: pointer;
+        }
+    }
+    &__title {
+        text-align: center;
+        color: red;
+        font-size: 40px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #b1adad;
+    }
+    &__list {
+        margin-top: 30px;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 12px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        &-button {
+            width: 25px;
+            height: 25px;
+            align-items: center;
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            cursor: pointer;
+        }
+        &--edit {
+            background-color: #FDC200;
+        }
+        &--complete {
+            background-color: #36800D;
+        }
+        &--delete {
+            background-color: #c70a0a;
+        }
+        &--undo {
+            background-color: rgb(91, 69, 69);
+            color: #fff;
+        }
+        &-complete {
+            background-color: #b6dca1;
+        }
+    }
+}
+
+.alert-list {
+    display: flex;
+    position: fixed;
+    z-index: 999;
+    top: 10px;
+    right: 10px;
+    flex-direction: column;
+    gap: 7px;
+    & .alert {
+        
+        width: 150px;
+        height: 40px;
+        padding: 0 10px;
+        border-radius: 7px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        background-color: #ddd;
+        &__close i:hover{
+            color: red;
+            cursor: pointer;
+        }
+        &__hidden {
+            display: none;
+        }
+    }
+    & .alert--access {
+        background-color: #36800D;
+        color: #ddd;
+    }
+}
+
+// xác nhận xóa
+
+.confirm-delete {
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #dddddd70;
+    }
+    
+}
+.box-confirm-delete {
+    position: absolute;
+    top: 30%;
+    left: calc((100% - 250px) / 2);
+    z-index: 999;
+    width: 250px;
+    height: 50px;
+    padding: 20px;
+    background-color: rgb(33, 154, 73);
+    border-radius: 10px;
+    text-align: center;
+    &__content {
+        color: #fff;
+    }
+    &__button {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        &--active {
+            border-radius: 5px;
+            border: none;
+            width: 60px;
+            height: 20px;
+            cursor: pointer;
+        }
+        &--yes {
+            background-color: #dd1313;
+            color: #fff;
+            &:hover {
+                background-color: #ad0505;
+            }
+        }
+        &--no {
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 5px;
+        right: 7px;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            color: red;
+        }
+    }
+}
+// End xác nhận xóa
+
+// Chỉnh sửa
+.edit-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #dddddd70;
+    }
+    &__content {
+        position: relative;
+        width: 250px;
+        height: 70px;
+        background-color: #36800D;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    &__button {
+        &--active {
+            border-radius: 5px;
+            border: none;
+            width: 80px;
+            height: 25px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        &--yes {
+            background-color: #dd1313;
+            color: #fff;
+            &:hover {
+                background-color: #ad0505;
+            }
+            margin-right: 10px;
+        }
+        &--no {
+            &:hover {
+                background-color: #ddd;
+            }
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 3px;
+        right: 6px;
+        color: #fff;
+        cursor: pointer;
+        &:hover {
+            color: red;
+        }
+    }
+    &__form {
+        & input{
+            width: 90%;
+            height: 15px;
+            margin-bottom: 5px;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            padding: 10px;
+        }
+    }
+}
+// End chỉnh sửa

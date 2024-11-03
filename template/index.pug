@@ -1,0 +1,26 @@
+doctype html
+html 
+    head 
+        title Todo App
+        link(rel="stylesheet" href="./assets/css/style.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer") 
+    body 
+        //- list thông báo
+        div(class="alert-list")
+        //- confirm delete
+        
+        div(class="todo-app")
+            h1(class="todo-app__title") Todo App 
+            form(class="todo-app__create" id="todo-app-create")
+                input(type="text" name="content" placeholder="Nhập công việc ...") 
+                button(type="submit") <i class="fa-solid fa-plus"></i>
+            div(class="todo-app__list")
+                div(class="todo-app__item")
+                    div(class="todo-app__item-content") Công việc 1
+                    div(class="todo-app__item-actions")
+                        button(class="todo-app__item-button todo-app__item--edit") <i class="fa-regular fa-pen-to-square"></i>
+                        button(class="todo-app__item-button todo-app__item--complete") <i class="fa-solid fa-check"></i>
+                        button(class="todo-app__item-button todo-app__item--delete") <i class="fa-solid fa-trash"></i>
+        //- Edit Content
+        
+        script(type="module" src="./script.js")
